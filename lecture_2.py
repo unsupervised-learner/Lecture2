@@ -15,7 +15,7 @@ def main():
 
 	#create figure
 	fig1 = plt.subplot2grid((7,1) , (0,0), rowspan=5, colspan=1)
-	fig2 = plt.subplot2grid((7,1), (1,0) , rowspan=2, colspan=1)
+	fig2 = plt.subplot2grid((7,1), (5,0) , rowspan=2, colspan=1)
 
 	plt.plot(stocks.index, stocks['Adj Close'])
 	plt.show()
