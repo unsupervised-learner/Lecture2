@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import pandas_datareader.data as pdr
 import datetime as dt
 
@@ -11,6 +12,13 @@ def main():
 	#download data
 	stocks = pdr.DataReader('MMM', 'yahoo', start_date, end_date)
 	print(stocks)
+
+	#create figure
+	fig1 = plt.subplot2grid((7,1) , (0,0), rowspan=5, colspan=1)
+	fig2 = plt.subplot2grid((7,1), (1,0) , rowspan=2, colspan=1)
+
+	plt.plot(stocks.index, stocks['Adj Close'])
+	plt.show()
 
 
 if __name__ == '__main__':
